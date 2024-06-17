@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+
+<div class="ion-page" id="content">
+  <ion-header [translucent]="true">
+    <app-toolbar></app-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <!-- Items -->
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of items; index as i" size="4">
+          <ion-card (click)="expandItemCard(i)" class="itemCard">
+            <img class="itemImg" alt="{{item.name}}" src="{{item.icon}}" />
+            <div class="itemDetailContainer">
+              <p class="itemDetail">
+                {{item.name}}
+              </p>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</div>

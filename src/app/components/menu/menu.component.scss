@@ -1,0 +1,70 @@
+// Menu CSS
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.avatarBox {
+    margin: auto;
+}
+
+.userProfileImg {
+    margin: auto;
+    background-color: #073560;
+    box-shadow: 4px 4px rgb(165, 165, 165);
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
+.profileButtons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menu_text {
+    font-size: 18px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.menu_icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.welcomeMessage {
+    margin: auto;
+    padding-top: 10px;
+}
+
+.menuButtons {
+    width: 50%;
+    margin: auto;
+    padding: 5px 0 5px 0;
+}
+
+.checked {
+    margin-left: auto;
+}
+
+.menuItem, .menu-box, .menuList {
+    --ion-item-background: transparent;
+}
+
+
+// Light Mode
+@media (prefers-color-scheme: light) {
+    .menuBG {
+        --background: transparent;
+        background-color: #c1c2ff;
+    }
+}
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    .menuBG {
+        --background: transparent;
+        background-color: #2f3068;
+    }
+}

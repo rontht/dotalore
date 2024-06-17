@@ -1,0 +1,93 @@
+<ion-menu side="start" contentId="content" menuId="menu">
+  <ion-content class="menuBG">
+    <ion-list style="padding: 0;" class="menuList">
+
+      <!-- User Account Display -->
+      <ion-item class="menuItem">
+        <ion-grid>
+          <div class="login">
+            <ion-row>
+              <div [hidden]=noProfile class="avatarBox">
+                <ion-avatar class="userProfileImg">
+                  <img src="./assets/profiles/profile_0.jpg">
+                </ion-avatar>
+              </div>
+              <div [hidden]=!noProfile class="avatarBox">
+                <ion-avatar class="userProfileImg">
+                  <img  alt="profile_icon" src={{savedAccounts[this.accountIndex].profile}}>
+                </ion-avatar>
+              </div>
+            </ion-row>
+            <ion-row>
+              <ion-label class="welcomeMessage">
+                Welcome, {{savedAccounts[accountIndex].displayName}}.
+              </ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="menuButtons">
+                  <ion-button fill="clear" expand="block" color="dark"
+                    (click)='routingPage("/profile/")'><u>Profile</u></ion-button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-grid>
+      </ion-item>
+
+      <!-- NavMenu Buttons -->
+      <ion-item (click)='routingPage("/hero/")' class="menu_box" >
+        <img class="menu_icon" alt="hero_icon" src="assets/icon/hero_page_icon.png" />
+        <span class="menu_text">Heroes</span>
+        <div [hidden]=checked.hero class="checked">
+          <ion-icon name="checkmark-sharp" slot="end"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item (click)='routingPage("/item/")' class="menu_box">
+        <img class="menu_icon" alt="item_icon" src="assets/icon/item_page_icon.png" />
+        <span class="menu_text">Items</span>
+        <div [hidden]=checked.item class="checked">
+          <ion-icon name="checkmark-sharp" slot="end"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item (click)='routingPage("/faction/")' class="menu_box">
+        <img class="menu_icon" alt="about_icon" src="assets/icon/faction_page_icon.png" />
+        <span class="menu_text">Factions</span>
+        <div [hidden]=checked.faction class="checked">
+          <ion-icon name="checkmark-sharp" slot="end"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item (click)='routingPage("/map/")' class="menu_box">
+        <img class="menu_icon" alt="about_icon" src="assets/icon/international_page_icon.png" />
+        <span class="menu_text">The International</span>
+        <div [hidden]=checked.map class="checked">
+          <ion-icon name="checkmark-sharp" slot="end"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item (click)='routingPage("/favourite/")' class="menu_box">
+        <img class="menu_icon" alt="favourites_icon" src="assets/icon/favourite_page_icon.png" />
+        <span class="menu_text">Favourites</span>
+        <div [hidden]=checked.favourite class="checked">
+          <ion-icon name="checkmark-sharp" slot="end"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item (click)='routingPage("/about/")' class="menu_box">
+        <img class="menu_icon" alt="about_icon" src="assets/icon/about_page_icon.png" />
+        <span class="menu_text">About</span>
+        <div [hidden]=checked.about class="checked">
+          <ion-icon name="checkmark-sharp" slot="end"></ion-icon>
+        </div>
+      </ion-item>
+
+      <!-- Log Out Button -->
+      <ion-item lines="none">
+        <div class="menuButtons">
+          <ion-button color="danger" href="/home" expand="block">
+            <ion-icon slot="start" name="log-out-outline"></ion-icon>
+            <ion-label slot="end">Log out</ion-label>
+          </ion-button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

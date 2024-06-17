@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="{{hero.theme}}">
+    <ion-button class="backButton" slot="start" fill="clear" (click)="closePopUp()">
+      <ion-icon slot="start" name="chevron-back"></ion-icon>
+      <ion-label>Back</ion-label>
+    </ion-button>
+
+    <ion-title slot="end" class="toolbarName">{{hero.id}}. {{hero.name}}</ion-title>
+
+    <ion-button slot="end" shape="round" fill="clear" color="trueLight" (click)="favourite()">
+      <div [hidden]="filledStar" class="favouriteButton">
+        <ion-icon name="star"></ion-icon>
+      </div>
+      <div [hidden]="outlineStar" class="favouriteButton">
+        <ion-icon name="star-outline"></ion-icon>
+      </div>
+    </ion-button>
+    <div [hidden]="true">
+      <ion-checkbox name="starred" ngDefaultControl [(ngModel)]="hero.starred"></ion-checkbox>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="none" style="padding: 0;">
+    <ion-item color="trueDark">
+      <img alt="{{hero.name}}" src="{{hero.bodyPic}}" />
+    </ion-item>
+    <ion-item color="{{hero.theme}}">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="attributeContainer">
+              <img class="attributeIcon" alt="{{hero.attributeType}}" src="{{hero.attributePic}}">
+              {{hero.attributeType}}
+            </div>
+          </ion-col>
+          <ion-col size="auto">
+            {{hero.tag}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item color="{{hero.theme}}">
+      <p class="heroShortDesp">
+        {{hero.shortDescription}}
+      </p>
+    </ion-item>
+    <ion-item color="{{hero.theme}}">
+      <p class="heroLongDesp">
+        {{hero.description}}
+      </p>
+    </ion-item>
+    <ion-item color="{{hero.theme}}">
+      <fieldset class="historyContainer">
+        <legend class="historyTitle">History</legend>
+        <h1 class="historyName">{{hero.realName}}</h1>
+        <p class="historyParagraph">{{hero.history1}}</p>
+        <p class="historyParagraph">{{hero.history2}}</p>
+        <p class="historyParagraph">{{hero.history3}}</p>
+        <p class="historyParagraph">{{hero.history4}}</p>
+      </fieldset>
+    </ion-item>
+    <div class="graphContainer">
+      <canvas #heroPickWinRates height=300></canvas>
+    </div>
+  </ion-list>
+</ion-content>

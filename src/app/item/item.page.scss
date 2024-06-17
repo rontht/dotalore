@@ -1,0 +1,57 @@
+// Item Display CSS
+// Light Mode
+@media (prefers-color-scheme: light) {
+    .itemDetail {
+        color: #000;
+    }
+
+    ion-content {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #82110b 0%, #ffffff 50%, #01305c 100%);
+    }
+
+    .itemCard {
+        --background: transparent;
+        background-color: #c1c2ff;
+    }
+}
+
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    .itemDetail {
+        color: #fff;
+    }
+
+    ion-content {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #82110b 0%, #000000 50%, #01305c 100%);
+    }
+
+    .itemCard {
+        --background: transparent;
+        background-color: #3f408d;
+    }
+}
+
+.itemImg {
+    width: 300px;
+}
+
+.goldIcon {
+    width: 15px;
+    height: 10px;
+}
+
+.itemDetail {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.itemDetailContainer {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}

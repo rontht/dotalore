@@ -1,0 +1,102 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+    <div class="logo">
+        <img alt="dota_lore_logo" src="/assets/icon/dotalore_logo.png">
+    </div>
+
+    <!--                Sign in                -->
+    <div [hidden]=signIn class="signInPage">
+        <p class="pageTitle">Sign-in</p>
+        <div class="inputs">
+            <ion-list>
+                <!-- Username Input -->
+                <ion-item>
+                    <ion-input type="text" [(ngModel)]="logInAccount.username" name="username" label="Username"
+                        labelPlacement="floating" aria-required></ion-input>
+                </ion-item>
+                <!-- Password Input -->
+                <ion-item>
+                    <ion-input type="password" [(ngModel)]="logInAccount.accPassword" name="accPassword"
+                        label="Password" labelPlacement="floating"></ion-input>
+                </ion-item>
+            </ion-list>
+            <!-- Log In Button-->
+            <ion-button expand="block" color="danger" (click)="logIn()">
+                <ion-label>Login</ion-label>
+            </ion-button>
+        </div>
+        <!-- Swtich between Log-in and Sign-up -->
+        <p class="switchPage">
+            <span>Don't have an account? </span>
+            <span class="switchButton" (click)="openSignUp()">Sign-up for new account.</span>
+        </p>
+
+    </div>
+
+    <!--                Sign up                -->
+    <div [hidden]=signUp class="signUpPage">
+        <p class="pageTitle">Create a new account?</p>
+        <div class="inputs">
+            <ion-list>
+
+                <!-- Display Name Input -->
+                <ion-item>
+                    <ion-input type="text" [(ngModel)]="signUpAccount[0].displayName" name="displayName" label="*Name"
+                        labelPlacement="floating" aria-required></ion-input>
+                </ion-item>
+
+                <!-- Username Input -->
+                <ion-item>
+                    <ion-input type="text" [(ngModel)]="signUpAccount[0].username" name="username" label="*Username"
+                        labelPlacement="floating"></ion-input>
+                </ion-item>
+
+                <!-- Password Input -->
+                <ion-item>
+                    <ion-input type="password" [(ngModel)]="signUpAccount[0].accPassword" name="accPassword"
+                        label="*Password" labelPlacement="floating"></ion-input>
+                </ion-item>
+
+                <!-- Date of Birth Selector -->
+                <ion-item>
+                    <ion-label>*Date of Birth</ion-label>
+                    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+                    <ion-modal [keepContentsMounted]="true">
+                        <ng-template>
+                            <ion-datetime #datetime id="datetime" presentation="date"
+                                [(ngModel)]="signUpAccount[0].dateOfBirth"></ion-datetime>
+                        </ng-template>
+                    </ion-modal>
+                </ion-item>
+
+                <!-- Agree Terms and Conditions Checkbox -->
+                <ion-item>
+                    <ion-checkbox labelPlacement="end" [(ngModel)]="agreedTerms">
+                        <ion-label class="terms">Agreed to <a href="">Terms and Conditions</a>.</ion-label>
+                    </ion-checkbox>
+                </ion-item>
+            </ion-list>
+
+            <!-- Sign Up Button -->
+            <ion-button expand="block" color="danger" (click)="createAcc()">
+                <ion-label>Sign-up</ion-label>
+            </ion-button>
+        </div>
+        <!-- Swtich between Log-in and Sign-up -->
+        <p class="switchPage">
+            <span>Already have an account? </span>
+            <span class="switchButton" (click)="openLogin()">Sign-in from here.</span>
+        </p>
+    </div>
+
+    <div [hidden]="false" class="devModeButton">
+        <label class="switch">
+            <input type="checkbox" id="togBtn" [(ngModel)]="devMode">
+            <div class="slider round"></div>
+        </label>
+    </div>
+    <div [hidden]=!devMode class="devMode">
+        <p *ngFor="let account of savedAccounts">
+            {{account.username}} {{account.accPassword}}
+        </p>
+    </div>
+</ion-content>

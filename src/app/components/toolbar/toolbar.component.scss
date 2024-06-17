@@ -1,0 +1,28 @@
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+// Light Mode
+@media (prefers-color-scheme: light) {
+    ion-toolbar {
+        --background: transparent;
+        background-color: #c1c2ff;
+    }
+
+}
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    ion-toolbar {
+        --background: transparent;
+        background-color: #2f3068;
+    }
+    .inAppLogo {
+        filter: invert(100%);
+    }
+}
+
+.inAppLogo{
+    width: auto;
+    height: 40px;
+}
+

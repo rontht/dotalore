@@ -1,0 +1,118 @@
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ion-color-radiant {
+    --ion-color-base: var(--ion-color-radiant);
+    --ion-color-base-rgb: var(--ion-color-radiant-rgb);
+    --ion-color-contrast: var(--ion-color-radiant-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-radiant-contrast-rgb);
+    --ion-color-shade: var(--ion-color-radiant-shade);
+    --ion-color-tint: var(--ion-color-radiant-tint);
+}
+
+.ion-color-dire {
+    --ion-color-base: var(--ion-color-dire);
+    --ion-color-base-rgb: var(--ion-color-dire-rgb);
+    --ion-color-contrast: var(--ion-color-dire-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-dire-contrast-rgb);
+    --ion-color-shade: var(--ion-color-dire-shade);
+    --ion-color-tint: var(--ion-color-dire-tint);
+}
+.factionName {
+    text-align: center;
+}
+
+.factionIntro {
+    text-align: justify;
+}
+
+.title {
+    color: white;
+}
+
+.radiantCard, .direCard {
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 90%;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.factionImg {
+    margin: 8px auto;
+    display: block;
+    text-align: center;
+}
+
+.factionInfo {
+    width: 90%;
+    margin: auto;
+}
+
+.bulletList {
+    margin: 10px auto;
+}
+
+// light Mode
+@media (prefers-color-scheme: light) {
+    * {
+        color: black;
+    }
+    
+    ion-content {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #82110b 0%, #ffffff 50%, #01305c 100%);
+    }
+
+    .heroName {
+        color: brown;
+        font-weight: bold;
+    }
+    
+    .heroName:hover {
+        text-decoration: underline;
+        color: red;
+        cursor: pointer;
+    }
+
+    .radiantCard {
+        box-shadow: 3px 3px black;
+        background-color: #8cd6fc;
+    }
+    .direCard {
+        box-shadow: 3px 3px black;
+        background-color: #f68485;
+    }
+}
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    * {
+        color: white;
+    }
+    
+    ion-content {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #82110b 0%, #000000 50%, #01305c 100%);
+    }
+    
+    .heroName {
+        color: yellow;
+    }
+    
+    .heroName:hover {
+        text-decoration: underline;
+        color: greenyellow;
+        cursor: pointer;
+    }
+    
+    .radiantCard {
+        box-shadow: 3px 3px black;
+        background-color: #01284d;
+    }
+    .direCard {
+        box-shadow: 3px 3px black;
+        background-color: #6e0e09;
+    }
+}

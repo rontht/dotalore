@@ -1,0 +1,76 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.image {
+    margin: auto;
+    background-color: #073560;
+    box-shadow: 4px 4px rgb(165, 165, 165);
+    width: 150px;
+    height: 150px;
+}
+
+.inputDiv {
+    font-size: 12px;
+    margin: auto;
+    padding-left: 50px;
+}
+
+.avatarBox {
+    margin: auto;
+}
+
+.arrow {
+    width: auto;
+    height: 70px;
+    --border-radius: 0;
+    margin-bottom: 30px;
+}
+
+.imageLabel {
+    text-align: center;
+}
+
+.inAppLogo{
+    width: auto;
+    height: 40px;
+}
+
+.settingDisplay {
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 3px 3px black;
+}
+
+// Light Mode
+@media (prefers-color-scheme: light) {
+    ion-toolbar {
+        --background: transparent;
+        background-color: #c1c2ff;
+    }
+
+    .ion-padding {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #82110b 0%, #ffffff 50%, #01305c 100%);
+    }
+
+    .arrowImg {
+        filter: invert(100%);
+    }
+}
+
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    ion-toolbar {
+        --background: transparent;
+        background-color: #2f3068;
+    }
+    
+    .ion-padding {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #82110b 0%, #000000 50%, #01305c 100%);
+    }
+    .inAppLogo {
+        filter: invert(100%);
+    }
+}

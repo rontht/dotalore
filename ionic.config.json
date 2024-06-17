@@ -1,0 +1,7 @@
+{
+  "name": "dotalore",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

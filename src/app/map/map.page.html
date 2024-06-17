@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+
+<div class="ion-page" id="content">
+  <ion-header [translucent]="true">
+    <app-toolbar></app-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div id="map" #map></div>
+
+    <div>
+      <ion-item class="selector">
+        <ion-select class="selector" label="Current Location" value="all" [(ngModel)]="locationSelector" (ionChange)="selected()">
+          <ion-select-option value="all">All World Championships</ion-select-option>
+          <ion-select-option value="1">The International 2011</ion-select-option>
+          <ion-select-option value="2">The International 2012</ion-select-option>
+          <ion-select-option value="3">The International 2013</ion-select-option>
+          <ion-select-option value="4">The International 2014</ion-select-option>
+          <ion-select-option value="5">The International 2015</ion-select-option>
+          <ion-select-option value="6">The International 2016</ion-select-option>
+          <ion-select-option value="7">The International 2017</ion-select-option>
+          <ion-select-option value="8">The International 2018</ion-select-option>
+          <ion-select-option value="9">The International 2019</ion-select-option>
+          <ion-select-option value="10">The International 2021</ion-select-option>
+          <ion-select-option value="11">The International 2022</ion-select-option>
+          <ion-select-option value="12">The International 2023</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+
+    <!-- Show Intro on view or when all championships option is selected -->
+    <div *ngIf="showIntro" class="detailBox">
+      <ion-item>
+        <ion-label>
+          <h1>
+            The Internationals
+          </h1>
+          <p style="text-align: justify;">
+            The International (TI) is an annual esports world championship for the five-on-five video game Dota 2.
+            The tournament's prize pool has been crowdfunded via a battle pass system within the game since 2013, with a quarter of all revenue from it directly going towards it. Internationals have the largest single-tournament prize pool of any esport event, with largest reaching US$40 million.
+            The International features a series of tournaments before the event, known as the Dota Pro Circuit (DPC), with the top 12 ranking teams receiving direct invitations based on their final standings.
+          </p>
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <!-- Show Details of the selected championship -->
+    <div *ngIf="showDetails" class="detailBox">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <h1>{{displayedLocation.title}}</h1>
+          </ion-row>
+          <ion-row>
+            <p>Venue: {{displayedLocation.venue}}</p>
+          </ion-row>
+          <ion-row>
+            <p>Date: {{displayedLocation.date}}</p>
+          </ion-row>
+          <ion-row>
+            <p>Winners: {{displayedLocation.champion}}</p>
+          </ion-row>
+          <ion-row>
+            <p>Prize Pool: {{displayedLocation.prizePool}}</p>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </div>
+  </ion-content>
+</div>

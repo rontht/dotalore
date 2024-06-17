@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="end" color="dark">PROFILE</ion-title>
+    <ion-button slot="start" fill="clear" (click)="goBack()">
+      <ion-icon name="chevron-back-outline" color="dark"></ion-icon>
+    </ion-button>
+    <img class="inAppLogo" alt="inAppLogo" src="/assets/icon/dotalore_logo.png" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list class="profileDisplay">
+    <ion-item>
+      <div [hidden]=noProfile class="avatarBox">
+        <ion-avatar class="userProfileImg">
+          <img src="./assets/profiles/profile_0.jpg">
+        </ion-avatar>
+      </div>
+      <div [hidden]=!noProfile class="avatarBox">
+        <ion-avatar class="userProfileImg">
+          <img  alt="profile_icon" src={{savedAccounts[this.accountIndex].profile}}>
+        </ion-avatar>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <p>preferred name</p>
+        <h1>&#160;&#160;&#160;{{this.savedAccounts[accountIndex].displayName}}</h1>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <p>username</p>
+        <h1>&#160;&#160;&#160;{{this.savedAccounts[accountIndex].username}}</h1>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <p>date of birth</p>
+        <h1>&#160;&#160;&#160;{{displayDate}}</h1>
+      </ion-label>
+    </ion-item>
+    <div class="editButton">
+      <ion-button expand="block" (click)="openSetting(accountIndex)">
+        <ion-label>Edit Profile</ion-label>
+      </ion-button>
+    </div>
+  </ion-list>
+</ion-content>

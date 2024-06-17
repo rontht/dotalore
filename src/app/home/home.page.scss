@@ -1,0 +1,170 @@
+// Light Mode
+@media (prefers-color-scheme: light) {
+  ion-content {
+    --background: transparent;
+    background-color: #c1c2ff;
+  }
+
+  .signInPage,
+  .signUpPage {
+    background-color: #ebf1ff;
+    box-shadow: 3px 3px black;
+  }
+  
+  .switchButton, a {
+    color: brown;
+    color: brown;
+  }
+
+  .switchButton:hover {
+    color: green;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+  ion-content {
+    --background: transparent;
+    background-color: #3f408d;
+  }
+
+  .signInPage,
+  .signUpPage {
+    background-color: #01305c;
+    box-shadow: 3px 3px black;
+  }
+
+  .logo img {
+    filter: invert(100%);
+  }
+
+  a {
+    color: azure;
+  }
+
+  .switchButton {
+    color: rgb(255, 148, 148);
+  }
+
+  .switchButton:hover {
+    color: rgb(192, 255, 192);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.logo {
+  padding-top: 50px;
+}
+
+.logo img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  margin-bottom: 40px;
+}
+
+.switchPage {
+  text-align: center;
+}
+
+.signInPage,
+.signUpPage {
+  margin-top: 30px;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+
+.pageTitle {
+  font-size: 30px;
+  margin: 10px;
+  text-align: center;
+}
+
+.inputs {
+  width: 80%;
+  margin: auto;
+}
+
+.terms {
+  font-size: 12px;
+  text-align: center;
+}
+
+ion-item,
+ion-list {
+  --ion-item-background: transparent;
+}
+
+// Dev Button
+.devMode {
+  border-radius: 10px;
+  width: 40%;
+  padding: 5px 10px;
+  background-color: #ebf1ff;
+  box-shadow: 3px 3px black;
+}
+
+.devMode p {
+  margin: 0;
+}
+
+.devModeButton {
+  margin-top: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2ab934;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;}

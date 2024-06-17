@@ -1,0 +1,121 @@
+// Light Mode
+@media (prefers-color-scheme: light) {
+    ion-content {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #01305c 0%, #ffffff 50%, #82110b 100%);
+    }
+
+    ion-toolbar {
+        --background: transparent;
+        background-color: #c1c2ff;
+    }
+
+    .page {
+        background-color: #c1c2ff;
+        box-shadow: 3px 3px black;
+    }
+}
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    ion-content {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #01305c 0%, #000000 50%, #82110b 100%);
+    }
+
+    ion-toolbar {
+        --background: transparent;
+        background-color: #2f3068;
+    }
+
+    .page {
+        background-color: #3f408d;
+        box-shadow: 3px 3px black;
+    }
+    .inAppLogo {
+        filter: invert(100%);
+    }
+}
+
+p {
+    margin: 0;
+}
+
+.page {
+    width: 90%;
+    height: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.itemIcon {
+    float: right;
+    display: block;
+}
+
+.goldIcon {
+    width: 15px;
+    height: 10px;
+}
+
+.goldContainer {
+    margin-top: 5px;
+}
+
+ion-avatar {
+    --border-radius: 10px;
+    width: auto;
+    height: auto;
+}
+
+.itemName {
+    font-weight: bold;
+}
+
+.topleftContainer {
+    padding-left: 30px;
+}
+
+.toprightContainer {
+    padding-left: 10px;
+}
+
+.topContainer {
+    margin-top: 20px;
+    // background-color: gray;
+    display: flex;
+    align-content: center;
+    // align-items: center;
+}
+
+.bonusContainer {
+    padding: 15px;
+    width: 70%;
+    margin: 20px auto 0 auto;
+    // background-color: brown;
+    border: 3px outset ;
+    border-radius: 3px;
+}
+
+.midContainer {
+    width: 90%;
+    margin: 20px auto 0 auto;
+    font-size: 15px;
+    text-align: center;
+    border-width: 5px;
+    border-radius: 10px;
+}
+
+.description {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bonuses {
+    line-height: 35px;
+}
+
+.inAppLogo{
+    width: auto;
+    height: 40px;
+}

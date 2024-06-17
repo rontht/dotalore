@@ -1,0 +1,71 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+// Light Mode
+@media (prefers-color-scheme: light) {
+    ion-toolbar {
+        --background: transparent;
+        background-color: #c1c2ff;
+    }
+
+    .ion-padding {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #82110b 0%, #ffffff 50%, #01305c 100%);
+    }
+
+    .profileDisplay {
+        box-shadow: 2px 2px #000000;
+    }
+}
+
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    ion-toolbar {
+        --background: transparent;
+        background-color: #2f3068;
+    }
+    
+    .ion-padding {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #82110b 0%, #000000 50%, #01305c 100%);
+    }
+
+    .profileDisplay {
+        box-shadow: 2px 2px #707070;
+    }
+    .inAppLogo {
+        filter: invert(100%);
+    }
+}
+
+.userProfileImg {
+    margin: auto;
+    background-color: #073560;
+    box-shadow: 4px 4px rgb(165, 165, 165);
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.avatarBox {
+    margin: auto;
+}
+
+.profileDisplay {
+    width: 80%;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+.editButton {
+    width: 50%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.inAppLogo{
+    width: auto;
+    height: 40px;
+}

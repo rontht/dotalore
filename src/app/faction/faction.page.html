@@ -1,0 +1,78 @@
+<app-menu></app-menu>
+
+<div class="ion-page" id="content">
+  <ion-header [translucent]="true">
+    <app-toolbar></app-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+
+    <!-- Radiant -->
+    <div class="radiantCard">
+      <div class="factionImg">
+        <img alt="radiant" src="assets/images/factions/Radiant_icon_2.webp" />
+      </div>
+      <h1 class="factionName">Radiant</h1>
+      <div class="factionInfo">
+        <p class="factionIntro">
+          &#160;&#160;&#160;&#160;&#160;The Radiant is a faction in Dota 2. It is characterized by a bright, natural
+          theme.
+          The bottom left half of the game map belongs to the Radiant, while the top right belongs to the Dire icon
+          Dire. The DotA equivalent of the Radiant was the Sentinel.
+        </p>
+        <h3 class="loreHeading">
+          Lore
+        </h3>
+        <ul class="loreList">
+          <li class="bulletList">
+            The Radiant is one of the Nemesis Stones, a force diametrically opposed to the Dire.
+          </li>
+          <li class="bulletList">
+            The Radiant is known to <span class="heroName" (click)="expandHeroCard(4)">Zet, the Arc Warden</span> as
+            Radinthul. He originally kept the
+            Dire and Radiant in check, but lost
+            control after the Mad Moon was destroyed.
+          </li>
+          <li class="bulletList">
+            Radiant ore can be found in Radiant lands. It is a glowing, bluish mineral with benevolent magical
+            properties, sometimes used to craft weapons and tools.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dire -->
+    <div class="direCard">
+      <div class="factionImg">
+        <img alt="dire" src="assets/images/factions/Dire_icon_2.webp" />
+      </div>
+      <h1 class="factionName">Dire</h1>
+      <div class="factionInfo">
+        <p class="factionIntro">
+          &#160;&#160;&#160;&#160;&#160;The Dire is a faction in Dota 2. It is characterized by a dark, gloomy theme.
+          The top right half of the game map belongs to the Dire, while the bottom left belongs to the Radiant icon
+          Radiant. The DotA equivalent of the Dire was the Scourge.
+        </p>
+        <h3 class="loreHeading">
+          Lore
+        </h3>
+        <ul class="loreList">
+          <li class="bulletList">
+            The Dire is one of the Nemesis Stones, a force diametrically opposed to the Radiant.
+          </li>
+          <li class="bulletList">
+            The Dire is known to <span class="heroName" (click)="expandHeroCard(4)">Zet, the Arc Warden</span> as
+            Diruulth. He originally kept the Dire and Radiant in
+            check, but lost control after the Mad Moon was destroyed.
+          </li>
+          <li class="bulletList">
+            The Dire spreads corruption.
+          </li>
+          <li class="bulletList">
+            The light of the sun and the moon counter the Dire's influences.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</div>

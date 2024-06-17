@@ -1,0 +1,161 @@
+// Light Mode
+@media (prefers-color-scheme: light) {
+    .blockBG {
+        color: #222428;
+        background-image: linear-gradient(45deg, #82110b 0%, #ffffff 50%, #01305c 100%);
+    }
+    .detailBG {
+        --ion-item-background: transparent;
+        background-image: linear-gradient(45deg, #01305c 0%, #ffffff 50%, #82110b 100%);
+    }
+    .detailCardBG {
+        box-shadow: 2px 2px #000000;
+        background-color: #c1c2ff;
+        border-radius: 8px;
+    }
+    // Slider background
+    .slider {
+        background-color: #073560;
+    }
+    input:checked+.slider {
+        background-color: #b97976;
+    }
+    // Slider color
+    .slider:before {
+        background-color: #7f97ad;
+    }
+    input:checked+.slider:before {
+        background-color: #861812;
+    }
+    // before checked
+    .block {
+        transform: translate(-100%, -50%);
+        color: white;
+    }
+    .detail {
+        transform: translate(0%, -50%);
+        color: white;
+    }
+    // after checked
+    input:checked+.slider .block {
+        color: white;
+    }
+    input:checked+.slider .detail {
+        color: white;
+    }
+}
+
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    .blockBG {
+        color: #222428;
+        background-image: linear-gradient(45deg, #82110b 0%, #000000 50%, #01305c 100%);
+    }
+    .detailBG {
+        --ion-item-background: transparent;
+        background-image: linear-gradient(45deg, #01305c 0%, #000000 50%, #82110b 100%);
+    }
+    .detailCardBG {
+        box-shadow: 2px 2px #3d3d3d;
+        background-color: #3f408d;
+        border-radius: 8px;
+    }
+    // Slider background
+    .slider {
+        background-color: #012c55;
+    }
+    input:checked+.slider {
+        background-color: #460906;
+    }
+    // Slider color
+    .slider:before {
+        background-color: #00172d;
+    }
+    input:checked+.slider:before {
+        background-color: #7c100a;
+    }
+    // before checked
+    .block {
+        transform: translate(-100%, -50%);
+        color: white; 
+    }
+    .detail {
+        transform: translate(0%, -50%);
+        color: white;
+    }
+    // after checked
+    input:checked+.slider .block {
+        color: white;
+    }
+    input:checked+.slider .detail {
+        color: white; 
+    }
+}
+.heroCard {
+    width: 178px;
+    height: 100px;
+}
+img.detailImgCard {
+    width: 91px;
+    height: 50px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+.detailAttributePic {
+    width: 23px;
+    height: 20px;
+    padding-right: 3px;
+}
+.detailList, .detailCardTextBG {
+    padding: 0;
+}
+//  Toggle CSS
+.toggleDiv {
+    width: 100%;
+    height: 40px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+}
+.switch input {
+    display: none;
+}
+.slider, .slider:before {
+    position: absolute;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+.slider {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.slider:before {
+    content: "";
+    height: 40px;
+    width: 50%;
+    left: -5px;
+    bottom: 0;
+    border-radius: 5px;
+}
+input:checked+.slider:before {
+    -webkit-transform: translateX(105%);
+    -ms-transform: translateX(105%);
+    transform: translateX(105%);
+}
+.block, .detail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    display: inline-block;
+    width: 50%;
+    height: 80%;
+    text-align: center;
+    padding-top: 8px;
+}

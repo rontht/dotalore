@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear" (click)="closeModal()">
+      <ion-icon name="chevron-back-outline" color="dark"></ion-icon>
+    </ion-button>
+    <ion-title slot="end" color="trueLight">
+      SETTING
+    </ion-title>
+    <img class="inAppLogo" alt="inAppLogo" src="/assets/icon/dotalore_logo.png" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="profileSection">
+    <ion-grid>
+      <ion-row>
+        <div [hidden]=noProfile class="avatarBox">
+          <ion-avatar class="image">
+            <img src="./assets/profiles/profile_0.jpg">
+          </ion-avatar>
+          <p class="imageLabel">Current Profile</p>
+        </div>
+        <div [hidden]=!noProfile class="avatarBox">
+          <ion-col>
+            <ion-avatar class="image">
+              <img src={{user.profile}} alt="saved image">
+            </ion-avatar>
+            <p class="imageLabel">Current Profile</p>
+          </ion-col>
+        </div>
+        <div [hidden]=!newImage class="avatarBox">
+          <ion-col>
+            <ion-avatar class="arrow">
+              <img src="./assets/icon/next_light.png" class="arrowImg">
+            </ion-avatar>
+          </ion-col>
+        </div>
+        <div [hidden]="!newImage" class="avatarBox">
+          <ion-col>
+            <ion-avatar class="image">
+              <img src={{imageFile}} alt="preview image">
+            </ion-avatar>
+            <p class="imageLabel">New Profile</p>
+          </ion-col>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="inputDiv">
+          <label for="addImage">Select a new image:</label>
+          <input id="addImage" #fileInput type="file" accept="image/*" (change)="imageSelected(fileInput.files)">
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-list class="settingDisplay">
+    <ion-item class="settingFields">
+      <ion-input type="text" label="Display Name" labelPlacement="floating" placeholder="Enter your display name..."
+        name="displayName" ngDefaultControl [(ngModel)]="user.displayName"></ion-input>
+    </ion-item>
+
+    <ion-item class="settingFields">
+      <ion-input type="text" label="Account Name" labelPlacement="floating" placeholder="Enter your username..."
+        name="username" ngDefaultControl [(ngModel)]="user.username"></ion-input>
+    </ion-item>
+
+    <ion-item class="settingFields">
+      <ion-input type="password" label="Password" labelPlacement="floating" placeholder="Enter your password..."
+        name="accPassword" ngDefaultControl [(ngModel)]="user.accPassword"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date of Birth</ion-label>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime #datetime id="datetime" presentation="date" [(ngModel)]="user.dateOfBirth"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" id="saveChanges" color="success">
+          <ion-label>Save Changes</ion-label>
+        </ion-button>
+        <ion-alert trigger="saveChanges" header="Confirm Changes"
+          message="Warning! You are about to apply changes to your account. Do you want to continue?"
+          [buttons]="saveButtons" (didDismiss)="saveChanges($event)"></ion-alert>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" id="deleteAcc" color="danger">
+          <ion-label>Delete Account</ion-label>
+        </ion-button>
+        <ion-alert trigger="deleteAcc" header="Delete Account?"
+          message="You are about to delete your account. This action cannot be reversed!" [buttons]="deleteButtons"
+          (didDismiss)="deleteAcc($event)"></ion-alert>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

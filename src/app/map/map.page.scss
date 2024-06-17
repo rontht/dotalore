@@ -1,0 +1,71 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+    ion-content {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #01305c 0%, #ffffff 50%, #82110b 100%);
+    }
+
+    .detailBox {
+        background-color: #c1c2ff;
+        box-shadow: 3px 3px black;
+    }
+
+    .selector {
+        --ion-item-background: #c1c2ff;
+    }
+}
+
+// Dark Mode
+@media (prefers-color-scheme: dark) {
+    ion-content {
+        --background: transparent;
+        background-image: linear-gradient(45deg, #01305c 0%, #000000 50%, #82110b 100%);
+    }
+
+    .detailBox {
+        background-color: #3f408d;
+        box-shadow: 3px 3px black;
+    }
+
+    .selector {
+        --ion-item-background: #3f408d;
+    }
+}
+
+#map {
+    width: 100%;
+    height: 50%;
+}
+
+capacitor-google-map {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+ion-content {
+    --background: none;
+}
+
+.detailBox {
+    width: 95%;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+ion-row p {
+    margin: 0;
+}
+
+ion-item {
+    --ion-item-background: transparent;
+}
+

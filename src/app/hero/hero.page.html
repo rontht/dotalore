@@ -1,0 +1,62 @@
+<app-menu></app-menu>
+
+<div class="ion-page" id="content">
+  <ion-header [translucent]="true">
+    <app-toolbar></app-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="toggleDiv">
+      <label class="switch">
+        <input type="checkbox" id="viewToggle" [(ngModel)]="toggle">
+        <span class="slider">
+          <span class="block">BLOCK VIEW</span>
+          <span class="detail">DETAIL VIEW</span>
+        </span>
+      </label>
+    </div>
+
+    <!-- Block View -->
+    <div [hidden]=toggle class="blockBG">
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let hero of heroes; index as i" size="6">
+            <ion-card class="heroCard" color="{{hero.theme}}" (click)="expandHeroCard(i)">
+              <img alt="{{hero.name}}" src="{{hero.profilePic}}" />
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Detail View -->
+    <div [hidden]=!toggle class="detailBG">
+      <ion-list class="detailList" lines="none">
+        <ion-item *ngFor="let hero of heroes; index as i" (click)="expandHeroCard(i)">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="auto" class="detailCardBG">
+                <img class="detailImgCard" alt="'{{hero.name}}" src="{{hero.profilePic}}" />
+              </ion-col>
+              <ion-col class="detailCardBG">
+                <ion-grid style="margin-top: 3px;">
+                  <ion-row class="detailCardTextBG">
+                    <ion-col class="detailCardTextBG" size="auto">
+                      <img class="detailAttributePic" alt="'{{hero.attributeType}}" src="{{hero.attributePic}}" />
+                    </ion-col>
+                    <ion-col class="detailCardTextBG">
+                      <p style="font-size:20px; margin: 0;">{{hero.name}}</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <p style="font-size:14px; margin: 0;">{{hero.tag}}</p>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</div>

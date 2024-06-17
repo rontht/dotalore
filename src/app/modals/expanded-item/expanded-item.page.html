@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="end" class="toolbarName" color="dark">{{item.name}}</ion-title>
+    <ion-button class="backButton" slot="start" fill="clear" (click)="closePopUp()">
+      <ion-icon name="chevron-back-outline" color="dark"></ion-icon>
+    </ion-button>
+    <img class="inAppLogo" alt="inAppLogo" src="/assets/icon/dotalore_logo.png" />
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="page">
+
+    <!-- Show Item Icon, Cost and Abilities -->
+    <div class="topContainer">
+      <ion-avatar class="topleftContainer">
+        <img class="itemIcon" alt="{{item.name}}" src="{{item.icon}}" />
+      </ion-avatar>
+      <div class="toprightContainer">
+        <p class="itemName">{{item.name}}</p>
+        <p class="goldContainer">
+          <img class="goldIcon" alt="gold icon" src="assets/images/items/gold.png" />
+          &#160;{{item.cost}}
+        </p>
+        <p class="effects">{{item.active}}</p>
+        <p class="effects">{{item.passive}}</p>
+      </div>
+    </div>
+
+    <!-- Show Description -->
+    <fieldset class="midContainer" [hidden]=hideDescription>
+      <legend>Description</legend>
+      <p class="description">{{item.description}}</p>
+    </fieldset>
+
+    <!-- Show Bonus Container if possible -->
+    <div class="botContainer" [hidden]=hideBonus>
+      <div class="bonusContainer">
+        <p *ngFor="let bonus of splittedBonuses" class="bonuses">
+          {{bonus}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

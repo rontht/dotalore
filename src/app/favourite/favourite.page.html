@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+
+<div class="ion-page" id="content">
+  <ion-header [translucent]="true">
+    <app-toolbar></app-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let favourite of favourites; index as i" size="6">
+          <ion-card class="heroCard" color="{{favourite.theme}}" (click)="expandHeroCard(i)">
+            <img alt="{{favourite.name}}" src="{{favourite.profilePic}}" />
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <div [hidden]="isEmpty" class="noStarrWarning">
+      <h3>WHOOPS! 404</h3>
+      <p>Add more heroes to your favourites.</p>
+    </div>
+  </ion-content>
+</div>
